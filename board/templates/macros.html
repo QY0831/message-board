@@ -1,0 +1,16 @@
+<!--这是一个宏(macro)，类似一个封装的函数
+    宏的名字是 form_field， 接收参数为 field
+    这个宏的作用是接收form中的field，获得该字段的属性，
+    生成input定义，生成label定义，渲染错误信息
+    \
+    bootstrap内置了这种宏，可以不用自己实现而直接导入
+-->
+{% macro form_field(field) %}
+    {{ field.label }}
+    {{ field(**kwargs) }}
+    {% if field.errors %}
+        {% for error in field.errors %}
+            <div class="invalid-feedback d-block">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}

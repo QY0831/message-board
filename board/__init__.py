@@ -20,7 +20,7 @@ app.jinja_env.lstrip_blocks = True
 db = SQLAlchemy(app)
 
 # when import object from __init__.py
-# don't have to say 'from ..init import ...'
+# don't have to 'from ..init import ...'
 # just import from the package name
 # such as
 # from board import app
