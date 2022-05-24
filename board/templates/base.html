@@ -16,12 +16,9 @@
             <small class="text-muted sub-title">to the world</small>
         </h1>
     </header>
-    <!--在模板中添加Python语句和表达式时，我们需要使用特定的定界符把它们标示出来。
-        循环语句： {% ... %}
-        表达式：  {{ ... }}
-        注释：    {# ... #}
-        使用功能flash()函数发送的消息会存储在session中，
-        我们需要在模板中使用全局函数get_flashed_messages()获取消息并将其显示出来。-->
+    <!--在模板中添加Python语句和表达式时，我们需要使用特定的定界符把它们标示出来。-->
+    <!--        使用功能flash()函数发送的消息会存储在session中，-->
+    <!--        我们需要在模板中使用全局函数get_flashed_messages()获取消息并将其显示出来。-->
 
     {% for message in get_flashed_messages() %}
         <div class="alert alert-info">

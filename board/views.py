@@ -1,11 +1,12 @@
 from board import app, db
-from models import Message
-from forms import MessageForm
+from board.models import Message
+from board.forms import MessageForm
 from flask import flash, redirect, url_for, render_template
 
 
-@app.route('/', method=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
+    print('index')
     # load all messages from db
     messages = Message.query.order_by(Message.timestamp.desc()).all()
     form = MessageForm()
@@ -24,5 +25,4 @@ def index():
         # redirect to index view
         return redirect(url_for('index'))
     # 未提交表格 -> 渲染含有所有message的主页
-    return render_template('index.html', form=MessageForm, messages=messages)
-
+    return render_template('index.html', form=form, messages=messages)

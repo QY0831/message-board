@@ -5,8 +5,14 @@ name = "pypi"
 
 [packages]
 bootstrap-flask = "*"
+flask-moment = "*"
+flask-debugtoolbar = "*"
+flask-sqlalchemy = "*"
+python-dotenv = "*"
+flask-wtf = "*"
 
 [dev-packages]
+faker = "*"
 
 [requires]
 python_version = "3.9"
